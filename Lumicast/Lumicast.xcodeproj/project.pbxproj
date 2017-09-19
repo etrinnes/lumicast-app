@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6EF53EB51F71A95800DBA419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF53EB41F71A95800DBA419 /* AppDelegate.swift */; };
+		6EF53EB71F71A95800DBA419 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF53EB61F71A95800DBA419 /* ViewController.swift */; };
+		6EF53EBA1F71A95800DBA419 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF53EB81F71A95800DBA419 /* Main.storyboard */; };
+		6EF53EBD1F71A95800DBA419 /* Lumicast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6EF53EBB1F71A95800DBA419 /* Lumicast.xcdatamodeld */; };
+		6EF53EBF1F71A95800DBA419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF53EBE1F71A95800DBA419 /* Assets.xcassets */; };
+		6EF53EC21F71A95800DBA419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF53EC01F71A95800DBA419 /* LaunchScreen.storyboard */; };
+		6EF53ECA1F71ADEB00DBA419 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF53EC91F71ADEB00DBA419 /* ListViewController.swift */; };
+		6EF53ECC1F71B65400DBA419 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF53ECB1F71B65400DBA419 /* Checkbox.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6EF53EB11F71A95800DBA419 /* Lumicast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumicast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF53EB41F71A95800DBA419 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6EF53EB61F71A95800DBA419 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6EF53EB91F71A95800DBA419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6EF53EBC1F71A95800DBA419 /* Lumicast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lumicast.xcdatamodel; sourceTree = "<group>"; };
+		6EF53EBE1F71A95800DBA419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6EF53EC11F71A95800DBA419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6EF53EC31F71A95800DBA419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EF53EC91F71ADEB00DBA419 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		6EF53ECB1F71B65400DBA419 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6EF53EAE1F71A95800DBA419 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6EF53EA81F71A95700DBA419 = {
+			isa = PBXGroup;
+			children = (
+				6EF53EB31F71A95800DBA419 /* Lumicast */,
+				6EF53EB21F71A95800DBA419 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6EF53EB21F71A95800DBA419 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EF53EB11F71A95800DBA419 /* Lumicast.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6EF53EB31F71A95800DBA419 /* Lumicast */ = {
+			isa = PBXGroup;
+			children = (
+				6EF53EB41F71A95800DBA419 /* AppDelegate.swift */,
+				6EF53EC91F71ADEB00DBA419 /* ListViewController.swift */,
+				6EF53EB61F71A95800DBA419 /* ViewController.swift */,
+				6EF53EB81F71A95800DBA419 /* Main.storyboard */,
+				6EF53EBE1F71A95800DBA419 /* Assets.xcassets */,
+				6EF53EC01F71A95800DBA419 /* LaunchScreen.storyboard */,
+				6EF53EC31F71A95800DBA419 /* Info.plist */,
+				6EF53EBB1F71A95800DBA419 /* Lumicast.xcdatamodeld */,
+				6EF53ECB1F71B65400DBA419 /* Checkbox.swift */,
+			);
+			path = Lumicast;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6EF53EB01F71A95800DBA419 /* Lumicast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EF53EC61F71A95800DBA419 /* Build configuration list for PBXNativeTarget "Lumicast" */;
+			buildPhases = (
+				6EF53EAD1F71A95800DBA419 /* Sources */,
+				6EF53EAE1F71A95800DBA419 /* Frameworks */,
+				6EF53EAF1F71A95800DBA419 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lumicast;
+			productName = Lumicast;
+			productReference = 6EF53EB11F71A95800DBA419 /* Lumicast.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6EF53EA91F71A95800DBA419 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Liz Trinnes";
+				TargetAttributes = {
+					6EF53EB01F71A95800DBA419 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6EF53EAC1F71A95800DBA419 /* Build configuration list for PBXProject "Lumicast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6EF53EA81F71A95700DBA419;
+			productRefGroup = 6EF53EB21F71A95800DBA419 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6EF53EB01F71A95800DBA419 /* Lumicast */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6EF53EAF1F71A95800DBA419 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EF53EC21F71A95800DBA419 /* LaunchScreen.storyboard in Resources */,
+				6EF53EBF1F71A95800DBA419 /* Assets.xcassets in Resources */,
+				6EF53EBA1F71A95800DBA419 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6EF53EAD1F71A95800DBA419 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EF53EB71F71A95800DBA419 /* ViewController.swift in Sources */,
+				6EF53EB51F71A95800DBA419 /* AppDelegate.swift in Sources */,
+				6EF53ECA1F71ADEB00DBA419 /* ListViewController.swift in Sources */,
+				6EF53EBD1F71A95800DBA419 /* Lumicast.xcdatamodeld in Sources */,
+				6EF53ECC1F71B65400DBA419 /* Checkbox.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6EF53EB81F71A95800DBA419 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EF53EB91F71A95800DBA419 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6EF53EC01F71A95800DBA419 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EF53EC11F71A95800DBA419 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6EF53EC41F71A95800DBA419 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6EF53EC51F71A95800DBA419 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6EF53EC71F71A95800DBA419 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Lumicast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Lumicast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6EF53EC81F71A95800DBA419 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Lumicast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Lumicast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6EF53EAC1F71A95800DBA419 /* Build configuration list for PBXProject "Lumicast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EF53EC41F71A95800DBA419 /* Debug */,
+				6EF53EC51F71A95800DBA419 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EF53EC61F71A95800DBA419 /* Build configuration list for PBXNativeTarget "Lumicast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EF53EC71F71A95800DBA419 /* Debug */,
+				6EF53EC81F71A95800DBA419 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6EF53EBB1F71A95800DBA419 /* Lumicast.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6EF53EBC1F71A95800DBA419 /* Lumicast.xcdatamodel */,
+			);
+			currentVersion = 6EF53EBC1F71A95800DBA419 /* Lumicast.xcdatamodel */;
+			path = Lumicast.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6EF53EA91F71A95800DBA419 /* Project object */;
+}
