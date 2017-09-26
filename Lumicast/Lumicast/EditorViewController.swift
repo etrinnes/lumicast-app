@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  EditorViewController.swift
 //  Lumicast
 //
 //  Created by Liz Trinnes on 9/26/17.

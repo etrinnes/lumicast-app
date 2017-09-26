@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  HomeViewController.swift
 //  Lumicast
 //
 //  Created by Liz Trinnes on 9/26/17.
