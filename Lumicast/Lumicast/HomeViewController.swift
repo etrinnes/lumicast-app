@@ -1,9 +1,30 @@
-//
-//  HomeViewController.swift
-//  Lumicast
-//
-//  Created by Liz Trinnes on 9/26/17.
-//  Copyright © 2017 Liz Trinnes. All rights reserved.
-//
+import UIKit
+import FirebaseDatabase
 
-import Foundation
+class HomeViewController: UIViewController {
+    
+    
+    @IBAction func viewAllRequests(_ sender: UIButton) {
+        
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+        navigationController?.pushViewController(myVC, animated: true)
+        
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    @IBAction func unwindToHomeViewController(segue: UIStoryboardSegue){
+        
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
