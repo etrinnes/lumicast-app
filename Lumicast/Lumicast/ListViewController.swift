@@ -99,9 +99,35 @@ class ListViewController: UITableViewController {
         performSegue(withIdentifier: "unwindToHome", sender: self)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You selected cell #\(indexPath.row)!")
+        
+        performSegue(withIdentifier: "ShowRequestDetails", sender: self)
+
+    }
+    
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("inside prepare for segue")
+        if segue.identifier == "ShowRequestDetails"{
+            print("We know the identifier...")
+            if let path = self.tableView.indexPathForSelectedRow{
+
+                let destination = segue.destination.childViewControllers[0] as! DetailsViewController
+
+                let currentCell = tableView.cellForRow(at: path)! as UITableViewCell
+                
+                destination.information = (currentCell.textLabel?.text)!
+                
+            }
+            
+        }
+    }
+
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
+

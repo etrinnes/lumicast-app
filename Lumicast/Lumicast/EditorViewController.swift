@@ -1,5 +1,6 @@
 import UIKit
 import FirebaseDatabase
+import MessageUI
 
 class EditorViewController: UIViewController {
     
@@ -21,8 +22,6 @@ class EditorViewController: UIViewController {
         let time = String(describing: Date())
         
         
-        
-        //creating artist with the given values
         let request = ["id":key,
                        "category": categoryTextField.text!,
                        "details": detailsTextField.text!,
