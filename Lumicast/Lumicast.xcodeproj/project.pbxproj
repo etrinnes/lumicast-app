@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2966377540F2A6FAFAD5AD43 /* Pods_Lumicast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79ECB4FC83F588298262B88D /* Pods_Lumicast.framework */; };
-		58D38DE71F8591D5000F45AC /* LumicastSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D38DE51F85811E000F45AC /* LumicastSdk.framework */; };
 		6E087C501F7B12C90092B040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E087C4F1F7B12C90092B040 /* AppDelegate.swift */; };
 		6E087C521F7B12C90092B040 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E087C511F7B12C90092B040 /* ViewController.swift */; };
 		6E087C551F7B12C90092B040 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E087C531F7B12C90092B040 /* Main.storyboard */; };
@@ -24,8 +23,11 @@
 
 /* Begin PBXFileReference section */
 		44493F6AB0ECD1BA02B169B0 /* Pods-Lumicast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lumicast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lumicast/Pods-Lumicast.debug.xcconfig"; sourceTree = "<group>"; };
-		58D38DE51F85811E000F45AC /* LumicastSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LumicastSdk.framework; path = SDK/Framework/LumicastSdk.framework; sourceTree = "<group>"; };
-		58D38DE81F859329000F45AC /* Lumicast-Bridgin-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lumicast-Bridgin-Header.h"; sourceTree = "<group>"; };
+		58C150101F8C06CA00A95278 /* Lumicast-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lumicast-Bridging-Header.h"; sourceTree = "<group>"; };
+		58C150131F8C073A00A95278 /* Position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
+		58C150151F8C074700A95278 /* LumicastSdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LumicastSdk.h; sourceTree = "<group>"; };
+		58C150171F8C075400A95278 /* LumicastErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LumicastErrors.h; sourceTree = "<group>"; };
+		58C150191F8C075D00A95278 /* Angle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Angle.h; sourceTree = "<group>"; };
 		6E087C4C1F7B12C80092B040 /* Lumicast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumicast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E087C4F1F7B12C90092B040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E087C511F7B12C90092B040 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58D38DE71F8591D5000F45AC /* LumicastSdk.framework in Frameworks */,
 				2966377540F2A6FAFAD5AD43 /* Pods_Lumicast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +60,7 @@
 		6E087C431F7B12C80092B040 = {
 			isa = PBXGroup;
 			children = (
+				58C150101F8C06CA00A95278 /* Lumicast-Bridging-Header.h */,
 				6E087C4E1F7B12C80092B040 /* Lumicast */,
 				6E087C4D1F7B12C80092B040 /* Products */,
 				9B2FD986587C2797515AFD6D /* Pods */,
@@ -105,9 +107,11 @@
 		EF2116C0FA400CC0D040C677 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				58D38DE51F85811E000F45AC /* LumicastSdk.framework */,
+				58C150191F8C075D00A95278 /* Angle.h */,
+				58C150171F8C075400A95278 /* LumicastErrors.h */,
+				58C150151F8C074700A95278 /* LumicastSdk.h */,
+				58C150131F8C073A00A95278 /* Position.h */,
 				79ECB4FC83F588298262B88D /* Pods_Lumicast.framework */,
-				58D38DE81F859329000F45AC /* Lumicast-Bridgin-Header.h */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,6 +151,7 @@
 				TargetAttributes = {
 					6E087C4B1F7B12C80092B040 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -372,10 +377,12 @@
 			baseConfigurationReference = 44493F6AB0ECD1BA02B169B0 /* Pods-Lumicast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Lumicast\\ SDK",
 					"$(PROJECT_DIR)/SDK/Framework",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Lumicast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -386,6 +393,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Lumicast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -395,10 +403,12 @@
 			baseConfigurationReference = EB28721DFB4D59A17AB443D6 /* Pods-Lumicast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Lumicast\\ SDK",
 					"$(PROJECT_DIR)/SDK/Framework",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Lumicast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
