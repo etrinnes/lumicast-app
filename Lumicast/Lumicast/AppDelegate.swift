@@ -23,9 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //var mLumicastSDK: LumicastSdk
         //mLumicastSDK.delegate = self;
         //mLumicastSDK.initialize;
-               
-        let blah : Position = Position()
-     //   print(blah.mapId)
         
         FIRApp.configure();
         

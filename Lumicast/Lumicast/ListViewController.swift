@@ -61,6 +61,13 @@ class ListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        var blah : Position = Position()
+        print(blah.mapId)
+        
+        let temp : LumicastSdk = LumicastSdk()
+        
+        
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Home", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ListViewController.back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
@@ -112,8 +119,9 @@ class ListViewController: UITableViewController {
             print("We know the identifier...")
             if let path = self.tableView.indexPathForSelectedRow{
 
-                let destination = segue.destination.childViewControllers[0] as! DetailsViewController
+              //  let destination = segue.destination.childViewControllers[0] as! DetailsViewController
 
+                let destination = segue.destination as! DetailsViewController
                 let currentCell = tableView.cellForRow(at: path)! as UITableViewCell
                 
                 destination.information = (currentCell.textLabel?.text)!
