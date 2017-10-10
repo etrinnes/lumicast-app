@@ -14,6 +14,7 @@
 		6E087C581F7B12C90092B040 /* Lumicast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E087C561F7B12C90092B040 /* Lumicast.xcdatamodeld */; };
 		6E087C5A1F7B12C90092B040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E087C591F7B12C90092B040 /* Assets.xcassets */; };
 		6E087C5D1F7B12C90092B040 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E087C5B1F7B12C90092B040 /* LaunchScreen.storyboard */; };
+		6E0FF1F51F8D50FA003E5EA8 /* LumicastSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0FF1F41F8D50FA003E5EA8 /* LumicastSdk.framework */; };
 		6E4ADFD31F7B134D00C5975A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ADFD21F7B134D00C5975A /* GoogleService-Info.plist */; };
 		6E53279E1F84136400380CCD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53279D1F84136400380CCD /* DetailsViewController.swift */; };
 		6EAAC4781F7B18E100674320 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAC4771F7B18E100674320 /* HomeViewController.swift */; };
@@ -36,6 +37,7 @@
 		6E087C591F7B12C90092B040 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E087C5C1F7B12C90092B040 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E087C5E1F7B12C90092B040 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E0FF1F41F8D50FA003E5EA8 /* LumicastSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LumicastSdk.framework; sourceTree = "<group>"; };
 		6E4ADFD21F7B134D00C5975A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E53279D1F84136400380CCD /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		6EAAC4771F7B18E100674320 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2966377540F2A6FAFAD5AD43 /* Pods_Lumicast.framework in Frameworks */,
+				6E0FF1F51F8D50FA003E5EA8 /* LumicastSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +110,7 @@
 		EF2116C0FA400CC0D040C677 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E0FF1F41F8D50FA003E5EA8 /* LumicastSdk.framework */,
 				58C150191F8C075D00A95278 /* Angle.h */,
 				58C150171F8C075400A95278 /* LumicastErrors.h */,
 				58C150151F8C074700A95278 /* LumicastSdk.h */,
@@ -390,9 +394,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs/iphoneos",
 					"$(PROJECT_DIR)/libs/iphonesimulator",
+					"$(PROJECT_DIR)/Lumicast",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Lumicast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liz/Documents/lumicast-app/Lumicast/Lumicast-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -416,9 +422,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs/iphoneos",
 					"$(PROJECT_DIR)/libs/iphonesimulator",
+					"$(PROJECT_DIR)/Lumicast",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Lumicast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liz/Documents/lumicast-app/Lumicast/Lumicast-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

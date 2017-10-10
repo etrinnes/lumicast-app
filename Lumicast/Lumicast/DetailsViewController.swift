@@ -12,6 +12,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         infoLabel.text = information
+        
     }
     
 }

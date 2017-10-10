@@ -11,7 +11,6 @@ import CoreData
 import Firebase
 
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -25,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //mLumicastSDK.delegate = self;
         //mLumicastSDK.initialize;
                
-        
+        let blah : Position = Position()
+     //   print(blah.mapId)
         
         FIRApp.configure();
         
