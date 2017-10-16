@@ -25,10 +25,6 @@
 /* Begin PBXFileReference section */
 		44493F6AB0ECD1BA02B169B0 /* Pods-Lumicast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lumicast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lumicast/Pods-Lumicast.debug.xcconfig"; sourceTree = "<group>"; };
 		58C150101F8C06CA00A95278 /* Lumicast-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lumicast-Bridging-Header.h"; sourceTree = "<group>"; };
-		58C150131F8C073A00A95278 /* Position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
-		58C150151F8C074700A95278 /* LumicastSdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LumicastSdk.h; sourceTree = "<group>"; };
-		58C150171F8C075400A95278 /* LumicastErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LumicastErrors.h; sourceTree = "<group>"; };
-		58C150191F8C075D00A95278 /* Angle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Angle.h; sourceTree = "<group>"; };
 		6E087C4C1F7B12C80092B040 /* Lumicast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumicast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E087C4F1F7B12C90092B040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E087C511F7B12C90092B040 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,10 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				6E0FF1F41F8D50FA003E5EA8 /* LumicastSdk.framework */,
-				58C150191F8C075D00A95278 /* Angle.h */,
-				58C150171F8C075400A95278 /* LumicastErrors.h */,
-				58C150151F8C074700A95278 /* LumicastSdk.h */,
-				58C150131F8C073A00A95278 /* Position.h */,
 				79ECB4FC83F588298262B88D /* Pods_Lumicast.framework */,
 			);
 			name = Frameworks;
@@ -398,7 +390,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Lumicast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liz/Documents/lumicast-app/Lumicast/Lumicast-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lumicast-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -426,7 +418,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Lumicast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liz/Documents/lumicast-app/Lumicast/Lumicast-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lumicast-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -15,19 +15,21 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var mLumicastSdk = LumicastSdk.init();
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        var error : NSError?
+        mLumicastSdk!.initialize("Z4rZsmpK", eid: "default", configTag: "nil", lights: "lights", error: &error)
+        if let myError = error{
+            print(myError.localizedDescription);
+        }
+        mLumicastSdk!.enableForegroundPositioning(&error)
+        if let myError = error{
+            print(myError.localizedDescription);
+        }
         
-        //var mLumicastSDK: LumicastSdk
-        //mLumicastSDK.delegate = self;
-        //mLumicastSDK.initialize;
-               
-        let blah : Position = Position()
-     //   print(blah.mapId)
-        
-        FIRApp.configure();
+        FIRApp.configure()
         
         return true
     }
@@ -35,6 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
+        var error : NSError?
+        mLumicastSdk!.disableForegroundPositioning(&error);
+        if let myError = error{
+            print(myError.localizedDescription);
+        }
+        mLumicastSdk!.enableBackgroundPositioning(&error);
+        if let myError = error{
+            print(myError.localizedDescription);
+        }
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -44,6 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        var error : NSError?
+        mLumicastSdk!.disableBackgroundPositioning(&error);
+        if let myError = error{
+            print(myError.localizedDescription);
+        }
+        mLumicastSdk!.enableForegroundPositioning(&error);
+        if let myError = error{
+            print(myError.localizedDescription);
+        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

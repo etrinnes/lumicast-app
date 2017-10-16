@@ -8,6 +8,8 @@ class EditorViewController: UIViewController {
     
     var editPost : [String: String?] = [:]
     
+    var myPosition = Position.init();
+    
     @IBOutlet weak var categoryTextField: UITextField!
 
     @IBOutlet weak var detailsTextField: UITextField!
@@ -17,8 +19,10 @@ class EditorViewController: UIViewController {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
         myVC.incoming = categoryTextField.text!
         
+        
         let key = String(arc4random_uniform(1000))
         let roomNum = String(arc4random_uniform(1000))
+        //let roomNum = String(myPosition.x) + ", " + String(myPosition.y)
         let time = String(describing: Date())
         
         
