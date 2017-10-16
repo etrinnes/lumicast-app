@@ -29,7 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(myError.localizedDescription);
         }
         
+<<<<<<< HEAD
         FIRApp.configure()
+=======
+        //var mLumicastSDK: LumicastSdk
+        //mLumicastSDK.delegate = self;
+        //mLumicastSDK.initialize;
+        
+        FIRApp.configure();
+>>>>>>> 75f89e79822bae57a52635ee1a78d81c2194b5b9
         
         return true
     }

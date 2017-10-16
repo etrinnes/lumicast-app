@@ -11,6 +11,8 @@ class ListViewController: UITableViewController {
     
     var testList : [String] = []
     
+    public var posts = [Post]()
+    
     
     @IBOutlet var myTableView: UITableView!
 
@@ -61,6 +63,14 @@ class ListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        var blah : Position = Position()
+        print(blah.mapId)
+        
+        let temp : LumicastSdk = LumicastSdk()
+        
+        
+        
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Home", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ListViewController.back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
@@ -68,6 +78,15 @@ class ListViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.myTableView.reloadData()
+        
+        
+        var topic : String = ""
+        var details : String = ""
+        var id : String = ""
+        var room : String = ""
+        var time : String = ""
+        var status : String = ""
+        
         
         ref = FIRDatabase.database().reference()
         
@@ -80,11 +99,29 @@ class ListViewController: UITableViewController {
                 
             }else{
                 // Print all non-string items to the console
+                
+                
+                
                 for childSnap in  snapshot.children.allObjects {
                     print("New child!")
                     let snap = childSnap as! FIRDataSnapshot
                     if let snapshotValue = snapshot.value as? NSDictionary, let snapVal = snapshotValue[snap.key] as Any? {
                         print("\(snap.key): \(snapVal)")
+                        if snap.key == "category"{
+                            topic = snapVal as! String
+                        }else if snap.key == "details"{
+                            details = snapVal as! String
+                        }else if snap.key == "id"{
+                            id = snapVal as! String
+                        }else if snap.key == "room"{
+                            room = snapVal as! String
+                        }else if snap.key == "time"{
+                            time = snapVal as! String
+                        }else if snap.key == "status"{
+                            status = snapVal as! String
+                        }
+                        
+                        self.posts.append(Post(topic, details, id, room, time, status))
                     }
                 }
                 
@@ -93,6 +130,15 @@ class ListViewController: UITableViewController {
         })
         
         
+    }
+    func findPost(_ indicator: String)->Post?{
+    
+        for post in posts{
+            if(post.topic == indicator){
+                return post
+            }
+        }
+        return nil
     }
     
     func back(sender: UIBarButtonItem) {
@@ -112,11 +158,20 @@ class ListViewController: UITableViewController {
             print("We know the identifier...")
             if let path = self.tableView.indexPathForSelectedRow{
 
-                let destination = segue.destination.childViewControllers[0] as! DetailsViewController
+              //  let destination = segue.destination.childViewControllers[0] as! DetailsViewController
 
+                let destination = segue.destination as! DetailsViewController
                 let currentCell = tableView.cellForRow(at: path)! as UITableViewCell
                 
-                destination.information = (currentCell.textLabel?.text)!
+                let currentPost : Post = findPost((currentCell.textLabel?.text)!)!
+                
+              // destination.information = (currentCell.textLabel?.text)!
+                destination.information = currentPost.topic
+                destination.details = currentPost.details
+              //  destination.id = currentPost.id
+                destination.room = currentPost.room
+                destination.time = currentPost.time
+                destination.status = currentPost.status
                 
             }
             

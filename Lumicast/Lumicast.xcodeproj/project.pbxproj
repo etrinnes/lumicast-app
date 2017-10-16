@@ -15,6 +15,7 @@
 		6E087C5A1F7B12C90092B040 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E087C591F7B12C90092B040 /* Assets.xcassets */; };
 		6E087C5D1F7B12C90092B040 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E087C5B1F7B12C90092B040 /* LaunchScreen.storyboard */; };
 		6E0FF1F51F8D50FA003E5EA8 /* LumicastSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0FF1F41F8D50FA003E5EA8 /* LumicastSdk.framework */; };
+		6E2EE4EB1F8D992800BEF8DC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2EE4EA1F8D992800BEF8DC /* Post.swift */; };
 		6E4ADFD31F7B134D00C5975A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ADFD21F7B134D00C5975A /* GoogleService-Info.plist */; };
 		6E53279E1F84136400380CCD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53279D1F84136400380CCD /* DetailsViewController.swift */; };
 		6EAAC4781F7B18E100674320 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAC4771F7B18E100674320 /* HomeViewController.swift */; };
@@ -34,6 +35,7 @@
 		6E087C5C1F7B12C90092B040 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E087C5E1F7B12C90092B040 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E0FF1F41F8D50FA003E5EA8 /* LumicastSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LumicastSdk.framework; sourceTree = "<group>"; };
+		6E2EE4EA1F8D992800BEF8DC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6E4ADFD21F7B134D00C5975A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E53279D1F84136400380CCD /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		6EAAC4771F7B18E100674320 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				6E53279D1F84136400380CCD /* DetailsViewController.swift */,
 				6EAAC47B1F7B1A5900674320 /* ListViewController.swift */,
 				6EAAC4791F7B198900674320 /* EditorViewController.swift */,
+				6E2EE4EA1F8D992800BEF8DC /* Post.swift */,
 				6EAAC4771F7B18E100674320 /* HomeViewController.swift */,
 				6E087C591F7B12C90092B040 /* Assets.xcassets */,
 				6E087C5B1F7B12C90092B040 /* LaunchScreen.storyboard */,
@@ -248,6 +251,7 @@
 				6EAAC47C1F7B1A5900674320 /* ListViewController.swift in Sources */,
 				6E087C581F7B12C90092B040 /* Lumicast.xcdatamodeld in Sources */,
 				6E53279E1F84136400380CCD /* DetailsViewController.swift in Sources */,
+				6E2EE4EB1F8D992800BEF8DC /* Post.swift in Sources */,
 				6EAAC47A1F7B198900674320 /* EditorViewController.swift in Sources */,
 				6EAAC4781F7B18E100674320 /* HomeViewController.swift in Sources */,
 			);
