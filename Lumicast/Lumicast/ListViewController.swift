@@ -64,10 +64,10 @@ class ListViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        var blah : Position = Position()
-        print(blah.mapId)
+        //var blah : Position = Position()
+        //print(blah.mapId)
         
-        let temp : LumicastSdk = LumicastSdk()
+        //let temp : LumicastSdk = LumicastSdk()
         
         
         

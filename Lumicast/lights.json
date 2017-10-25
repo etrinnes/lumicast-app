@@ -1,0 +1,7 @@
+{
+"info" : "empty lights",
+"max_mounting_height" : "4.0",
+"fixtureType" : "ES8_LEDxxT8",
+"operatingPoint" : "100%",
+"lights" : []
+}

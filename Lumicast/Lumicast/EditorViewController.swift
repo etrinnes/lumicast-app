@@ -21,8 +21,8 @@ class EditorViewController: UIViewController {
         
         
         let key = String(arc4random_uniform(1000))
-        let roomNum = String(arc4random_uniform(1000))
-        //let roomNum = String(myPosition.x) + ", " + String(myPosition.y)
+        //let roomNum = String(arc4random_uniform(1000))
+        let roomNum = String(myPosition.x) + ", " + String(myPosition.y)
         let time = String(describing: Date())
         
         

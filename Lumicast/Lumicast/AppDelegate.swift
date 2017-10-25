@@ -16,9 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var mLumicastSdk = LumicastSdk.init();
+    var aggTimer = Timer();
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Initialize SDK
         var error : NSError?
         mLumicastSdk!.initialize("Z4rZsmpK", eid: "default", configTag: "nil", lights: "lights", error: &error)
         if let myError = error{
@@ -29,19 +32,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(myError.localizedDescription);
         }
         
-<<<<<<< HEAD
+        //Aggregate Data Collection
+        aggTimer = Timer.scheduledTimer(timeInterval: 900, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
+        
         FIRApp.configure()
-=======
-        //var mLumicastSDK: LumicastSdk
-        //mLumicastSDK.delegate = self;
-        //mLumicastSDK.initialize;
         
-        FIRApp.configure();
->>>>>>> 75f89e79822bae57a52635ee1a78d81c2194b5b9
-        
+        sendAggData()               //send location on application load
         return true
     }
-
+    
+    func sendAggData(){
+        
+        let myPosition = Position.init()
+        let xLoc = String(myPosition.x)
+        let yLoc = String(myPosition.y)
+        
+        var ref : FIRDatabaseReference?
+        ref = FIRDatabase.database().reference().child("aggData");
+        
+        let key = String(arc4random_uniform(1000));
+        let time = String(describing: Date());
+        let locPost = ["id":key,
+                       "xLoc": xLoc,
+                       "yLoc": yLoc,
+                       "time": time,
+                       ] as [String : Any]
+        ref?.child(key).setValue(locPost)
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -85,6 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+        aggTimer.invalidate()
     }
 
     // MARK: - Core Data stack
