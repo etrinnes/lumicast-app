@@ -1,5 +1,6 @@
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
@@ -8,6 +9,77 @@ class HomeViewController: UIViewController {
         
         let myVC = storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
         navigationController?.pushViewController(myVC, animated: true)
+        
+    }
+    
+    
+    @IBOutlet weak var segment: UISegmentedControl!
+    
+    @IBOutlet weak var emailText: UITextField!
+    
+    @IBOutlet weak var passwordText: UITextField!
+    
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    @IBOutlet weak var submitButton: UIButton!
+    
+    @IBAction func clickSubmit(_ sender: UIButton) {
+        
+        if emailText.text != "" && passwordText.text != ""{
+            
+            if segment.selectedSegmentIndex == 0{   // Login user
+                
+                FIRAuth.auth()?.signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
+                    
+                    if user != nil{
+                        print("SUCCESS")
+                        self.errorLabel.text = "You have logged in successfully"
+                        self.errorLabel.textColor = UIColor.green
+                        
+                    }else{
+                        if let myError = error?.localizedDescription{
+                            print(myError)
+                            self.errorLabel.text = myError
+                            self.errorLabel.textColor = UIColor.red
+                        }else{
+                            print("ERROR")
+                            self.errorLabel.text = "Unexpected error"
+                            self.errorLabel.textColor = UIColor.red
+                        }
+                    }
+                
+                
+                })
+                
+            }else{
+                
+                FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
+                    
+                    if user != nil{
+                        print("SUCCESS")
+                        self.errorLabel.text = "You have been registered successfully"
+                        self.errorLabel.textColor = UIColor.green
+                        
+                    }else{
+                        if let myError = error?.localizedDescription{
+                            print(myError)
+                            self.errorLabel.text = myError
+                            self.errorLabel.textColor = UIColor.red
+                        }else{
+                            print("ERROR")
+                            self.errorLabel.text = "Unexpected error"
+                            self.errorLabel.textColor = UIColor.red
+                        }
+                    }
+
+                    
+                    
+                })
+                
+            }
+            
+        }
+        
         
     }
     
