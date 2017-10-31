@@ -21,19 +21,30 @@ class ListViewController: UITableViewController {
     var handle : FIRDatabaseHandle?
     
     override func viewDidAppear(_ animated: Bool) {
+        print("About to print testList: ")
         print(testList)
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return myList.count
-        return testList.count
+      //  return testList.count
+        return posts.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> PostTableViewCell {
+        //let cell = (tableView.dequeueReusableCell(withIdentifier: "cell") as? PostTableViewCell)!
+        let cell = PostTableViewCell(style: .default, reuseIdentifier: "cell")
+        cell.configure(post: posts[indexPath.row])
+        
+        
+        
+       // let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         //  cell.textLabel?.text = myList[indexPath.row]
-        cell.textLabel?.text = testList[indexPath.row]
+       // cell.postId = testList[indexPath.row]
+        
+        //cell.textLabel?.text = testList[indexPath.row]
+        cell.textLabel?.text = posts[indexPath.row].topic
         return cell
     }
     
@@ -64,13 +75,6 @@ class ListViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        //var blah : Position = Position()
-        //print(blah.mapId)
-        
-        //let temp : LumicastSdk = LumicastSdk()
-        
-        
-        
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Home", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ListViewController.back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
@@ -94,13 +98,11 @@ class ListViewController: UITableViewController {
             
             if let item = snapshot.value as? String{
                 
-                self.testList.append(item)
+              //  self.testList.append(item)
                 self.myTableView.reloadData()
                 
             }else{
                 // Print all non-string items to the console
-                
-                
                 
                 for childSnap in  snapshot.children.allObjects {
                     print("New child!")
@@ -121,9 +123,30 @@ class ListViewController: UITableViewController {
                             status = snapVal as! String
                         }
                         
-                        self.posts.append(Post(topic, details, id, room, time, status))
+                        
+                        
                     }
+                    
+                    if(topic != "" && details != "" && id != "" && room != "" && time != "" && status != ""){
+                        
+                        let p : Post = Post(topic, details, id, room, time, status)
+                        
+                        self.posts.append(p)
+                        
+                        topic = ""
+                        details = ""
+                        id = ""
+                        room = ""
+                        time = ""
+                        status = ""
+                        
+                        //  self.posts.append(Post(topic, details, id, room, time, status))
+                    }
+                    
+                    
                 }
+                
+                self.printAllPosts()
                 
             }
             
@@ -131,11 +154,27 @@ class ListViewController: UITableViewController {
         
         
     }
+    
+    func printAllPosts(){
+        print("ABOUT TO PRINT ALL POSTS")
+        for post in posts{
+            print(post.topic)
+            print(post.details)
+            print(post.id)
+            print(post.time)
+            print(post.room)
+            print(post.status)
+        }
+    }
+    
     func findPost(_ indicator: String)->Post?{
     
-        for post in posts{
-            if(post.topic == indicator){
+        for p in posts{
+           /* if(post.topic == indicator){
                 return post
+            }*/
+            if(p.id == indicator){
+                return p
             }
         }
         return nil
@@ -161,9 +200,19 @@ class ListViewController: UITableViewController {
               //  let destination = segue.destination.childViewControllers[0] as! DetailsViewController
 
                 let destination = segue.destination as! DetailsViewController
-                let currentCell = tableView.cellForRow(at: path)! as UITableViewCell
+               // let currentCell = tableView.cellForRow(at: path)! as UITableViewCell
+                let currentCell = tableView.cellForRow(at: path)! as! PostTableViewCell
                 
-                let currentPost : Post = findPost((currentCell.textLabel?.text)!)!
+                print("Cell ID " + currentCell.postId!)
+                
+                //let currentPost : Post = findPost((currentCell.textLabel?.text)!)!
+                let currentPost : Post = findPost((currentCell.postId)!)!
+                
+                
+                
+                print("Post ID: " + currentPost.id)
+                
+                
                 
               // destination.information = (currentCell.textLabel?.text)!
                 destination.information = currentPost.topic
@@ -183,6 +232,14 @@ class ListViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+class PostTableViewCell: UITableViewCell {
+    var postId: String? = nil
+    
+    func configure(post: Post) {
+        postId = post.id
+        // configure the labels, etc in the cell
     }
 }
 
