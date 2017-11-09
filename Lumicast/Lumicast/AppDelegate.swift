@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //Aggregate Data Collection
-        aggTimer = Timer.scheduledTimer(timeInterval: 900, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
+        aggTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
         
         FIRApp.configure()
         
