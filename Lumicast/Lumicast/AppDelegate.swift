@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let myError = error{
             print(myError.localizedDescription);
         }
+        sleep(1);
         mLumicastSdk!.enableForegroundPositioning(&error)
         if let myError = error{
             print(myError.localizedDescription);
@@ -43,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func sendAggData(){
         
+        
+        
         let myPosition = Position.init()
         let xLoc = String(myPosition.x)
         let yLoc = String(myPosition.y)
@@ -51,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ref = FIRDatabase.database().reference().child("aggData");
         
         let key = String(arc4random_uniform(1000));
-        let time = String(describing: Date());
+        let time = Position.getSystemTimestamp();
         let locPost = ["id":key,
                        "xLoc": xLoc,
                        "yLoc": yLoc,
