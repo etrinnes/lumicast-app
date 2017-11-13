@@ -44,6 +44,7 @@ class ListViewController: UITableViewController {
        // cell.postId = testList[indexPath.row]
         
         //cell.textLabel?.text = testList[indexPath.row]
+        print("There are \(posts.capacity) posts.");
         cell.textLabel?.text = posts[indexPath.row].topic
         return cell
     }
@@ -145,8 +146,9 @@ class ListViewController: UITableViewController {
                     
                     
                 }
-                
+                print("Now there are \(self.posts.capacity) posts.")
                 self.printAllPosts()
+                self.myTableView.reloadData()
                 
             }
             
