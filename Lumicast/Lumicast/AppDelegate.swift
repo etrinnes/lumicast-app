@@ -15,15 +15,22 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var mLumicastSdk = LumicastSdk.init();
+    //var mLumicastSdk = LumicastSdk.init();
     var aggTimer = Timer();
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         //Initialize SDK
+        var mLumicastSdk = LumicastSdk.init()
         var error : NSError?
-        mLumicastSdk!.initialize("Z4rZsmpK", eid: "default", configTag: "nil", lights: "lights", error: &error)
+        mLumicastSdk?.initializeSimulationMode("./testPostions.json", error: &error)
+        //mLumicastSdk!.initialize("Z4rZsmpK", eid: "default", configTag: "nil", lights: "/lights.json", error: &error)
+        /*if(!(mLumicastSdk?.initialize("Z4rZsmpK", eid: "default", configTag: "nil", lights: "lights.json", error: &error))!){
+            print("not initialized")
+        }else{
+            print("initialized")
+        }*/
         if let myError = error{
             print(myError.localizedDescription);
         }
@@ -34,10 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //Aggregate Data Collection
-        aggTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
+        aggTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
         
         FIRApp.configure()
         
+        mLumicastSdk?.enableBackgroundPositioning(&error)
+        if let myError = error{
+            print(myError.localizedDescription)
+        }
         sendAggData()               //send location on application load
         return true
     }
@@ -45,16 +56,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func sendAggData(){
         
         
-        
         let myPosition = Position.init()
         let xLoc = String(myPosition.x)
         let yLoc = String(myPosition.y)
         
         var ref : FIRDatabaseReference?
-        ref = FIRDatabase.database().reference().child("aggData");
+        ref = FIRDatabase.database().reference().child("TestaggData");
         
-        let key = String(arc4random_uniform(1000));
-        let time = Position.getSystemTimestamp();
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyz1234567890"
+        var key = ""
+        for _ in 0 ..< 9 {
+            let rand = arc4random_uniform(36);
+            var nextChar = letters.character(at: Int(rand));
+            key += NSString(characters: &nextChar, length: 1) as String
+        }
+        let time = String(describing: Date());
         let locPost = ["id":key,
                        "xLoc": xLoc,
                        "yLoc": yLoc,

@@ -1,0 +1,12 @@
+{
+    "promotions":[
+        {
+            "product_id": 1,
+            "promotion": "3 for $1"
+        },
+		{
+            "product_id": 6,
+            "promotion": "20% off"
+        }
+     ]
+}

@@ -1,0 +1,167 @@
+{
+   "x_range": 9.144,
+   "y_range": 17.6784,
+   "ceiling_height" : 2.58,
+   "features": [
+      {
+         "top_right": {
+            "y": -8.9,
+            "x": -5.2
+         },
+         "bottom_left": {
+            "y": -9.4,
+            "x": -5.9
+         },
+         "name": "pillar"
+      }
+   ],
+   "gondolas": [
+      {
+         "top_right": {
+            "x": -5.7,
+            "y": -2.95
+        },
+         "bottom_left": {
+            "x": -6.3096,
+            "y": -3.5596
+         },
+         "name": "1"
+      },
+      {
+         "top_right": {
+            "x": -3.9,
+            "y": -2.95
+         },
+         "bottom_left": {
+            "x": -4.5096,
+            "y": -3.5596
+         },
+         "name": "2"
+     },
+      {
+         "top_right": {
+            "y": -10.5,
+            "x": -3.6
+         },
+         "bottom_left": {
+            "y": -12.8,
+            "x": -4.2096
+         },
+         "name": "5"
+      },
+      {
+         "top_right": {
+            "y": -10.5,
+            "x": -6.0
+         },
+         "bottom_left": {
+            "y": -12.8,
+            "x": -6.6096
+         },
+         "name": "6"
+      }
+   ],
+   "departments": [
+      {
+         "top_right": {
+            "y": -2.0469532012939453,
+            "x": -3.0088939666748047
+         },
+         "id": 0,
+         "bottom_left": {
+            "y": -7.300290584564209,
+            "x": -7.255037784576416
+         },
+         "name": "Produce"
+      },
+      {
+         "top_right": {
+            "y": -9.982622146606445,
+            "x": -2.989877223968506
+         },
+         "id": 1,
+         "bottom_left": {
+            "y": -13.39828872680664,
+            "x": -7.248546123504639
+         },
+         "name": "Housewares"
+      }
+   ],
+   "products": [
+      {
+         "id": 0,
+         "price": "",
+         "location": {
+            "z": 0,
+            "y": -3.2548,
+            "x": -6.0048
+         },
+         "aisle": "1",
+         "department_id": 0,
+         "name": "Apples",
+         "image": "apples.jpg",
+         "shopping_list": "true",
+         "shelf": "1"
+      },
+      {
+         "id": 1,
+         "price": "",
+         "location": {
+            "z": 0,
+            "y": -3.2548,
+            "x": -4.2048
+         },
+         "aisle": "2",
+         "department_id": 0,
+         "name": "Bananas",
+         "image": "bananas.jpg",
+         "shopping_list": "false",
+         "shelf": "1"
+      },
+	  {
+         "id": 4,
+         "price": "$150.00",
+         "location": {
+            "z": -2.589085578918457,
+            "y": -11.630961418151855,
+            "x": -3.678286075592041
+         },
+         "aisle": "3B",
+         "department_id": 1,
+         "name": "Le Creuset Dutch Oven",
+         "image": "pot.jpg",
+         "shopping_list": "true",
+         "shelf": "2"
+      },
+      {
+         "id": 5,
+         "price": "$333.33",
+         "location": {
+            "z": -2.665597438812256,
+            "y": -12.215179443359375,
+            "x": -4.180431365966797
+         },
+         "aisle": "3B",
+         "department_id": 1,
+         "name": "Vitamix Blender",
+         "image": "blender.jpg",
+         "shopping_list": "true",
+         "shelf": "2"
+      },
+      {
+         "id": 6,
+         "price": "$50",
+         "location": {
+            "z": -2.5768465995788574,
+            "y": -11.102867126464844,
+            "x": -6.064870834350586
+         },
+         "aisle": "3B",
+         "department_id": 1,
+         "name": "Chef's Knife",
+         "image": "knife.jpg",
+         "shopping_list": "false",
+         "shelf": "2"
+      }
+    ]
+}
