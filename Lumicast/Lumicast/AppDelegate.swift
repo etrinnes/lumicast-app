@@ -15,53 +15,119 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    //var mLumicastSdk = LumicastSdk.init();
     var aggTimer = Timer();
+    var sLumicastSdk = LumicastSdk.init();
+    //var mLumicastSdk = LumicastSdk.init();
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
+
         //Initialize SDK
-        var mLumicastSdk = LumicastSdk.init()
+       
         var error : NSError?
-        mLumicastSdk?.initializeSimulationMode("./testPostions.json", error: &error)
-        //mLumicastSdk!.initialize("Z4rZsmpK", eid: "default", configTag: "nil", lights: "/lights.json", error: &error)
-        /*if(!(mLumicastSdk?.initialize("Z4rZsmpK", eid: "default", configTag: "nil", lights: "lights.json", error: &error))!){
-            print("not initialized")
-        }else{
-            print("initialized")
-        }*/
+        //mLumicastSdk!.initialize("Z4rZsmpK",eid: "default", configTag: "nil", lights: "./lights.json",error: &error)
+        sLumicastSdk?.initializeSimulationMode("./testPostions.json", error: &error);
         if let myError = error{
             print(myError.localizedDescription);
         }
-        sleep(1);
-        mLumicastSdk!.enableForegroundPositioning(&error)
+        
+        sLumicastSdk!.enableForegroundPositioning(&error)
         if let myError = error{
             print(myError.localizedDescription);
         }
         
         //Aggregate Data Collection
         aggTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
-        
-        FIRApp.configure()
-        
-        mLumicastSdk?.enableBackgroundPositioning(&error)
-        if let myError = error{
-            print(myError.localizedDescription)
+        /*
+        if let path = Bundle.main.path(forResource: "lights", ofType: "json") {
+            do {
+                
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                let jsonDictionary =  jsonResult as! Dictionary<String,Any>
+                
+                // print out key-value from json
+                for (key, value) in jsonDictionary {
+                    
+                    print("\(key) - \(value) ")
+                    
+                }
+                
+                //Initialize SDK
+                var error : NSError?
+                var isInitialized = false
+                
+                 isInitialized = mLumicastSdk!.initialize("Z4rZsmpK", eid: "default", configTag: nil, lights: "./lights.json", error: &error)
+                
+                // -(void)onLumicastInitialized:(bool)success resultString:(NSString*)resultString;
+                
+              /*  var lumicastListener : LumicastEventListener
+                
+                var success = false
+                var eventString : String = "test"
+                
+                lumicastListener = LumicastEventListener()
+                
+                lumicastListener.onLumicastInitialized(success, resultString: eventString as String!)
+                
+                
+                print("Success from inititalized: \(success)")
+                print("Result string? \(eventString)")*/
+           
+                
+                
+                if let myError = error{
+                    print("### Error on SDK initialization.")
+                    print(myError.localizedDescription);
+                }
+                print("Is initialized? \(isInitialized)")
+            
+                
+                
+                sleep(2);
+                var error2 : NSError?
+                let codeWord = mLumicastSdk!.getCentralFixtureCodeword()
+                print("Code word: \(String(codeWord))")
+                
+                let test : NSDictionary = mLumicastSdk!.buildInfo() as NSDictionary
+                print("##### ABOUT TO PRINT BUILD INFO")
+                for (key, value) in test{
+                    print("\(key): \(value)")
+                }
+                
+                
+                mLumicastSdk!.enableForegroundPositioning(&error2)
+                if let myError = error2{
+                    print("### Error on enabling foreground positioning.")
+                    print(myError.localizedDescription);
+                }
+                
+         //Aggregate Data Collection
+         aggTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
+
+            } catch {
+                // handle error
+            }
         }
-        sendAggData()               //send location on application load
-        return true
+        */
+        
+            FIRApp.configure()
+
+            sendAggData()               //send location on application load
+        
+            return true
     }
     
     func sendAggData(){
         
         
-        let myPosition = Position.init()
-        let xLoc = String(myPosition.x)
-        let yLoc = String(myPosition.y)
+        //let myPosition = Position.init()
+        let myPosition2 = Position.init(position: 34, mapId: 4, x: 10.4, y: 12.3, z: 2.3, timestamp: 1600)
+        let xLoc = String(myPosition2!.x)
+        let yLoc = String(myPosition2!.y)
         
         var ref : FIRDatabaseReference?
-        ref = FIRDatabase.database().reference().child("TestaggData");
+        ref = FIRDatabase.database().reference().child("TestAggData");
         
         let letters : NSString = "abcdefghijklmnopqrstuvwxyz1234567890"
         var key = ""
@@ -84,11 +150,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
         
         var error : NSError?
-        mLumicastSdk!.disableForegroundPositioning(&error);
+        sLumicastSdk!.disableForegroundPositioning(&error);
         if let myError = error{
             print(myError.localizedDescription);
         }
-        mLumicastSdk!.enableBackgroundPositioning(&error);
+        sLumicastSdk!.enableBackgroundPositioning(&error);
         if let myError = error{
             print(myError.localizedDescription);
         }
@@ -104,11 +170,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         
         var error : NSError?
-        mLumicastSdk!.disableBackgroundPositioning(&error);
+        sLumicastSdk!.disableBackgroundPositioning(&error);
         if let myError = error{
             print(myError.localizedDescription);
         }
-        mLumicastSdk!.enableForegroundPositioning(&error);
+        sLumicastSdk!.enableForegroundPositioning(&error);
         if let myError = error{
             print(myError.localizedDescription);
         }
