@@ -19,26 +19,87 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var aggTimer = Timer();
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        //Initialize SDK
-        var error : NSError?
-        mLumicastSdk!.initialize("Z4rZsmpK", eid: "default", configTag: "nil", lights: "lights", error: &error)
-        if let myError = error{
-            print(myError.localizedDescription);
+        if let path = Bundle.main.path(forResource: "lights", ofType: "json") {
+            do {
+                
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                let jsonDictionary =  jsonResult as! Dictionary<String,Any>
+                
+                // print out key-value from json
+                for (key, value) in jsonDictionary {
+                    
+                    print("\(key) - \(value) ")
+                    
+                }
+                
+                //Initialize SDK
+                var error : NSError?
+                var isInitialized = false
+                
+                 isInitialized = mLumicastSdk!.initialize("Z4rZsmpK", eid: "default", configTag: nil, lights: "lights.json", error: &error)
+                
+                // -(void)onLumicastInitialized:(bool)success resultString:(NSString*)resultString;
+                
+              /*  var lumicastListener : LumicastEventListener
+                
+                var success = false
+                var eventString : String = "test"
+                
+                lumicastListener = LumicastEventListener()
+                
+                lumicastListener.onLumicastInitialized(success, resultString: eventString as String!)
+                
+                
+                print("Success from inititalized: \(success)")
+                print("Result string? \(eventString)")*/
+           
+                
+                
+                if let myError = error{
+                    print("### Error on SDK initialization.")
+                    print(myError.localizedDescription);
+                }
+                print("Is initialized? \(isInitialized)")
+            
+                
+                
+                sleep(2);
+                var error2 : NSError?
+                let codeWord = mLumicastSdk!.getCentralFixtureCodeword()
+                print("Code word: \(String(codeWord))")
+                
+                let test : NSDictionary = mLumicastSdk!.buildInfo() as NSDictionary
+                print("##### ABOUT TO PRINT BUILD INFO")
+                for (key, value) in test{
+                    print("\(key): \(value)")
+                }
+                
+                
+                mLumicastSdk!.enableForegroundPositioning(&error2)
+                if let myError = error2{
+                    print("### Error on enabling foreground positioning.")
+                    print(myError.localizedDescription);
+                }
+                
+                //Aggregate Data Collection
+                aggTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
+                
+                FIRApp.configure()
+                
+                sendAggData()               //send location on application load
+                
+                
+            } catch {
+                // handle error
+            }
         }
-        sleep(1);
-        mLumicastSdk!.enableForegroundPositioning(&error)
-        if let myError = error{
-            print(myError.localizedDescription);
-        }
         
-        //Aggregate Data Collection
-        aggTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
         
-        FIRApp.configure()
         
-        sendAggData()               //send location on application load
+        
+        
         return true
     }
     
