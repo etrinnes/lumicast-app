@@ -119,6 +119,10 @@
                         <outlet property="passwordText" destination="tEb-nM-53w" id="ZOs-9h-2Zy"/>
                         <outlet property="segment" destination="Xxw-d0-Dqh" id="dZt-We-T1e"/>
                         <outlet property="submitButton" destination="aey-cR-Drr" id="TQr-e4-naG"/>
+                        <outlet property="submitPostButton" destination="h8k-p2-ay7" id="g75-no-vkD"/>
+                        <outlet property="submitPostLabel" destination="MHL-0t-sQG" id="NRH-Wo-Qtg"/>
+                        <outlet property="viewPostsButton" destination="ph4-Jw-as4" id="DxX-Xq-ZyD"/>
+                        <outlet property="viewPostsLabel" destination="xxY-Va-ZVe" id="2bH-iQ-gqG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
