@@ -4,6 +4,8 @@ import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
+    var isLoggedIn : Bool = false
+    
     
     @IBAction func viewAllRequests(_ sender: UIButton) {
         
@@ -11,6 +13,12 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(myVC, animated: true)
         
     }
+    
+    @IBOutlet weak var submitPostButton: UIButton!
+    @IBOutlet weak var submitPostLabel: UILabel!
+    
+    @IBOutlet weak var viewPostsButton: UIButton!
+    @IBOutlet weak var viewPostsLabel: UILabel!
     
     
     @IBOutlet weak var segment: UISegmentedControl!
@@ -35,8 +43,11 @@ class HomeViewController: UIViewController {
                         print("SUCCESS")
                         self.errorLabel.text = "You have logged in successfully"
                         self.errorLabel.textColor = UIColor.green
+                        self.isLoggedIn = true
+                        self.viewDidLoad()
                         
                     }else{
+                        self.isLoggedIn = false
                         if let myError = error?.localizedDescription{
                             print(myError)
                             self.errorLabel.text = myError
@@ -93,6 +104,32 @@ class HomeViewController: UIViewController {
         //tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
+        
+        
+        if isLoggedIn{
+            submitPostButton.isHidden = false
+            submitPostLabel.isHidden = false
+            viewPostsButton.isHidden = false
+            viewPostsLabel.isHidden = false
+            
+            
+            segment.isHidden = true
+            emailText.isHidden = true
+            passwordText.isHidden = true
+            submitButton.isHidden = true
+            
+            
+        }else{
+            submitPostButton.isHidden = true
+            submitPostLabel.isHidden = true
+            viewPostsButton.isHidden = true
+            viewPostsLabel.isHidden = true
+            
+            segment.isHidden = false
+            emailText.isHidden = false
+            passwordText.isHidden = false
+            submitButton.isHidden = false
+        }
         
     }
     
