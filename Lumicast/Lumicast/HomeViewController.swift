@@ -112,11 +112,23 @@ class HomeViewController: UIViewController {
             viewPostsButton.isHidden = false
             viewPostsLabel.isHidden = false
             
+            
+            segment.isHidden = true
+            emailText.isHidden = true
+            passwordText.isHidden = true
+            submitButton.isHidden = true
+            
+            
         }else{
             submitPostButton.isHidden = true
             submitPostLabel.isHidden = true
             viewPostsButton.isHidden = true
             viewPostsLabel.isHidden = true
+            
+            segment.isHidden = false
+            emailText.isHidden = false
+            passwordText.isHidden = false
+            submitButton.isHidden = false
         }
         
     }
