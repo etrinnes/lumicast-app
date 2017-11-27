@@ -17,6 +17,9 @@
 		6E0FF1F51F8D50FA003E5EA8 /* LumicastSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0FF1F41F8D50FA003E5EA8 /* LumicastSdk.framework */; };
 		6E2EE4EB1F8D992800BEF8DC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2EE4EA1F8D992800BEF8DC /* Post.swift */; };
 		6E4ADFD31F7B134D00C5975A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ADFD21F7B134D00C5975A /* GoogleService-Info.plist */; };
+		6E4FB9D91FCC9BE500EEB5F4 /* logo_screen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4FB9D81FCC9BE500EEB5F4 /* logo_screen2.png */; };
+		6E4FB9DB1FCC9F2B00EEB5F4 /* plane-transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4FB9DA1FCC9F2B00EEB5F4 /* plane-transparent.png */; };
+		6E4FB9DD1FCC9F3200EEB5F4 /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4FB9DC1FCC9F3200EEB5F4 /* post.png */; };
 		6E53279E1F84136400380CCD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E53279D1F84136400380CCD /* DetailsViewController.swift */; };
 		6EAAC4781F7B18E100674320 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAC4771F7B18E100674320 /* HomeViewController.swift */; };
 		6EAAC47A1F7B198900674320 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAC4791F7B198900674320 /* EditorViewController.swift */; };
@@ -38,6 +41,9 @@
 		6E0FF1F41F8D50FA003E5EA8 /* LumicastSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LumicastSdk.framework; sourceTree = "<group>"; };
 		6E2EE4EA1F8D992800BEF8DC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6E4ADFD21F7B134D00C5975A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E4FB9D81FCC9BE500EEB5F4 /* logo_screen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_screen2.png; sourceTree = "<group>"; };
+		6E4FB9DA1FCC9F2B00EEB5F4 /* plane-transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane-transparent.png"; sourceTree = "<group>"; };
+		6E4FB9DC1FCC9F3200EEB5F4 /* post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = post.png; sourceTree = "<group>"; };
 		6E53279D1F84136400380CCD /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		6EAAC4771F7B18E100674320 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6EAAC4791F7B198900674320 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +96,9 @@
 				6EAAC4791F7B198900674320 /* EditorViewController.swift */,
 				6ED2B8691FC3B24D007372CC /* lights.json */,
 				6E2EE4EA1F8D992800BEF8DC /* Post.swift */,
+				6E4FB9DC1FCC9F3200EEB5F4 /* post.png */,
+				6E4FB9D81FCC9BE500EEB5F4 /* logo_screen2.png */,
+				6E4FB9DA1FCC9F2B00EEB5F4 /* plane-transparent.png */,
 				6EAAC4771F7B18E100674320 /* HomeViewController.swift */,
 				6E087C591F7B12C90092B040 /* Assets.xcassets */,
 				6E087C5B1F7B12C90092B040 /* LaunchScreen.storyboard */,
@@ -183,8 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E087C5D1F7B12C90092B040 /* LaunchScreen.storyboard in Resources */,
+				6E4FB9DD1FCC9F3200EEB5F4 /* post.png in Resources */,
+				6E4FB9DB1FCC9F2B00EEB5F4 /* plane-transparent.png in Resources */,
 				6E4ADFD31F7B134D00C5975A /* GoogleService-Info.plist in Resources */,
 				6E087C5A1F7B12C90092B040 /* Assets.xcassets in Resources */,
+				6E4FB9D91FCC9BE500EEB5F4 /* logo_screen2.png in Resources */,
 				6ED2B86A1FC3B24D007372CC /* lights.json in Resources */,
 				6E087C551F7B12C90092B040 /* Main.storyboard in Resources */,
 			);
