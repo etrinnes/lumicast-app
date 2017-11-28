@@ -26,6 +26,7 @@
 		6EAAC4781F7B18E100674320 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAC4771F7B18E100674320 /* HomeViewController.swift */; };
 		6EAAC47A1F7B198900674320 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAC4791F7B198900674320 /* EditorViewController.swift */; };
 		6EAAC47C1F7B1A5900674320 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAC47B1F7B1A5900674320 /* ListViewController.swift */; };
+		6EC4636F1FCE253800505B1F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EC4636E1FCE253800505B1F /* logo.png */; };
 		6ED2B86A1FC3B24D007372CC /* lights.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ED2B8691FC3B24D007372CC /* lights.json */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		6EAAC4771F7B18E100674320 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6EAAC4791F7B198900674320 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		6EAAC47B1F7B1A5900674320 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		6EC4636E1FCE253800505B1F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		6ED2B8691FC3B24D007372CC /* lights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lights.json; sourceTree = "<group>"; };
 		79ECB4FC83F588298262B88D /* Pods_Lumicast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lumicast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB28721DFB4D59A17AB443D6 /* Pods-Lumicast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lumicast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lumicast/Pods-Lumicast.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				6E96E17A1FCCB51500BB544E /* testPositions.json */,
 				6ED2B8691FC3B24D007372CC /* lights.json */,
 				6E2EE4EA1F8D992800BEF8DC /* Post.swift */,
+				6EC4636E1FCE253800505B1F /* logo.png */,
 				6E4FB9DE1FCCAFC600EEB5F4 /* background.png */,
 				6E4FB9DC1FCC9F3200EEB5F4 /* post.png */,
 				6E4FB9D81FCC9BE500EEB5F4 /* logo_screen2.png */,
@@ -199,6 +202,7 @@
 			files = (
 				6E087C5D1F7B12C90092B040 /* LaunchScreen.storyboard in Resources */,
 				6E4FB9DD1FCC9F3200EEB5F4 /* post.png in Resources */,
+				6EC4636F1FCE253800505B1F /* logo.png in Resources */,
 				6E4FB9DB1FCC9F2B00EEB5F4 /* plane-transparent.png in Resources */,
 				6E4ADFD31F7B134D00C5975A /* GoogleService-Info.plist in Resources */,
 				6E087C5A1F7B12C90092B040 /* Assets.xcassets in Resources */,
