@@ -31,6 +31,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var submitButton: UIButton!
     
+    @IBOutlet weak var signOutButton: UIButton!
+    
     @IBAction func clickSubmit(_ sender: UIButton) {
         
         if emailText.text != "" && passwordText.text != ""{
@@ -94,6 +96,22 @@ class HomeViewController: UIViewController {
         
     }
     
+    @IBAction func clickSignOut(_ sender: UIButton) {
+        do {
+            let test = try FIRAuth.auth()?.signOut()
+            print("Successfully Logged out")
+            self.errorLabel.text = "You have been logged out."
+            self.errorLabel.textColor = UIColor.green
+        } catch let error {
+            print("error occured \(error)")
+        }
+        
+        self.isLoggedIn = false
+        self.viewDidLoad()
+        
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +129,7 @@ class HomeViewController: UIViewController {
             submitPostLabel.isHidden = false
             viewPostsButton.isHidden = false
             viewPostsLabel.isHidden = false
-            
+            signOutButton.isHidden = false
             
             segment.isHidden = true
             emailText.isHidden = true
@@ -124,6 +142,7 @@ class HomeViewController: UIViewController {
             submitPostLabel.isHidden = true
             viewPostsButton.isHidden = true
             viewPostsLabel.isHidden = true
+            signOutButton.isHidden = true
             
             segment.isHidden = false
             emailText.isHidden = false

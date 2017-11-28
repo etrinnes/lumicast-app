@@ -1,0 +1,13 @@
+{
+    "info1" : "Duration is in Milliseconds. Angle is in degrees. Coordinates (x,y) are in meters.",
+    "info2" : "Interpolation on the x,y coordinates is done from the previous point to the current point. The last angle is used until the current point is reached. This assumes that the last point's angle points to the current point. Non-specified items are assumed to be zero.",
+    
+"positions":[
+        {"x": 1.00, "y": 1.00, "angle": 270.00, "duration":   10 },
+        {"x": 4.00, "y": 1.00, "angle": 180.00, "duration": 2000 },
+        {"x": 4.00, "y": 4.00, "angle":  90.00, "duration": 2000 },
+        {"outage": 1, "angle":  45.00, "duration": 2000 },
+        {"x": 1.00, "y": 4.00, "angle":   0.00, "duration": 2000 },
+        {"x": 1.00, "y": 1.00, "angle": 270.00, "duration": 2000 }
+    ]
+}

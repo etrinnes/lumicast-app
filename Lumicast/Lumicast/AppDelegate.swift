@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         var error : NSError?
         //mLumicastSdk!.initialize("Z4rZsmpK",eid: "default", configTag: "nil", lights: "./lights.json",error: &error)
-        sLumicastSdk?.initializeSimulationMode("./testPostions.json", error: &error);
+        sLumicastSdk?.initializeSimulationMode("testPostions.json", error: &error);
         if let myError = error{
             print(myError.localizedDescription);
         }
