@@ -26,14 +26,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         var error : NSError?
         //mLumicastSdk!.initialize("Z4rZsmpK",eid: "default", configTag: "nil", lights: "./lights.json",error: &error)
-        let data = "{\"info1\" : \"Duration is in Milliseconds. Angle is in degrees. Coordinates (x,y) are in meters.\",\"info2\" : \"Interpolation on the x,y coordinates is done from the previous point to the current point. The last angle is used until the current point is reached. This assumes that the last point's angle points to the current point. Non-specified items are assumed to be zero.\",\"positions\":[{\"x\": 1.00, \"y\": 1.00, \"angle\": 270.00, \"duration\":   100000 },]}"
+        let data = "{\"mapID\" : 5,\"info1\" : \"Duration is in Milliseconds. Angle is in degrees. Coordinates (x,y) are in meters.\",\"info2\" : \"Interpolation on the x,y coordinates is done from the previous point to the current point. The last angle is used until the current point is reached. This assumes that the last point's angle points to the current point. Non-specified items are assumed to be zero.\",\"positions\":[{\"x\": 1.00, \"y\": 1.00, \"angle\": 270.00, \"duration\":   10000 },{\"x\": 4.00, \"y\": 1.00, \"angle\": 180.00, \"duration\":   5000 },{\"x\": 4.00, \"y\": 4.00, \"angle\": 90.00, \"duration\":   10000 },{\"x\": 1.00, \"y\": 4.00, \"angle\": 0.00, \"duration\":   5000 },{\"x\": 1.00, \"y\": 1.50, \"angle\": 270.00, \"duration\":   15000 }]}"
         
         sLumicastSdk?.initializeSimulationMode(data, error: &error);
         if let myError = error{
             print(myError.localizedDescription);
         }
         sLumicastSdk!.enableForegroundPositioning(&error)
-        //sLumicastSdk!.enableForegroundPositioning(&error)
+        var myPosition = Position.init()
+        print(myPosition.x)
+        print(myPosition.y)
+        print(myPosition.toString())
+        //sLumicastSdk!.enableBackgroundPositioning(&error)
         if let myError = error{
             print(myError.localizedDescription);
         }
@@ -122,14 +126,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func sendAggData(){
         
-        
         let myPosition = Position.init()
         print("first")
+        print(myPosition.toString())
+        let myPosition2 = Position.init(position: 0,mapId: 5,x:myPosition.x,y:myPosition.y,z:myPosition.z,timestamp:myPosition.timestamp)
         //let myPosition2 = Position.init(position: 34, mapId: 4, x: 10.4, y: 12.3, z: 2.3, timestamp: 1600)
-        print("init")
+        print(myPosition2!.toString())
         let xLoc = String(myPosition.x)
+        print(myPosition.timestamp)
         let yLoc = String(myPosition.y)
-        
+        print(myPosition.type)
         print("after")
         var ref : FIRDatabaseReference?
         ref = FIRDatabase.database().reference().child("TestAggData");
