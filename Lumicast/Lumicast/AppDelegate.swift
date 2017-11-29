@@ -26,18 +26,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         var error : NSError?
         //mLumicastSdk!.initialize("Z4rZsmpK",eid: "default", configTag: "nil", lights: "./lights.json",error: &error)
-        sLumicastSdk?.initializeSimulationMode("testPostions.json", error: &error);
+        let data = "{\"info1\" : \"Duration is in Milliseconds. Angle is in degrees. Coordinates (x,y) are in meters.\",\"info2\" : \"Interpolation on the x,y coordinates is done from the previous point to the current point. The last angle is used until the current point is reached. This assumes that the last point's angle points to the current point. Non-specified items are assumed to be zero.\",\"positions\":[{\"x\": 1.00, \"y\": 1.00, \"angle\": 270.00, \"duration\":   100000 },]}"
+        
+        sLumicastSdk?.initializeSimulationMode(data, error: &error);
         if let myError = error{
             print(myError.localizedDescription);
         }
-        
         sLumicastSdk!.enableForegroundPositioning(&error)
+        //sLumicastSdk!.enableForegroundPositioning(&error)
         if let myError = error{
             print(myError.localizedDescription);
         }
         
         //Aggregate Data Collection
-        aggTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
+        aggTimer = Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(AppDelegate.sendAggData), userInfo: nil, repeats: true)
         /*
         if let path = Bundle.main.path(forResource: "lights", ofType: "json") {
             do {
@@ -121,11 +123,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func sendAggData(){
         
         
-        //let myPosition = Position.init()
-        let myPosition2 = Position.init(position: 34, mapId: 4, x: 10.4, y: 12.3, z: 2.3, timestamp: 1600)
-        let xLoc = String(myPosition2!.x)
-        let yLoc = String(myPosition2!.y)
+        let myPosition = Position.init()
+        print("first")
+        //let myPosition2 = Position.init(position: 34, mapId: 4, x: 10.4, y: 12.3, z: 2.3, timestamp: 1600)
+        print("init")
+        let xLoc = String(myPosition.x)
+        let yLoc = String(myPosition.y)
         
+        print("after")
         var ref : FIRDatabaseReference?
         ref = FIRDatabase.database().reference().child("TestAggData");
         
